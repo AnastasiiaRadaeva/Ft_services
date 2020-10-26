@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+spec:
+  selector:
+    app: nginx #привязываем сервис к нашему контейнеру
+    type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80 #какой порт хотим открыть
+      targetPort: 80 #к какому порту хотим присоединиться
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+
+spec:
+  containers:
+  - name: nginx
+    image: nginx_image
+    imagePullPolicy: Never
+    ports:
+      - containerPort: 80
