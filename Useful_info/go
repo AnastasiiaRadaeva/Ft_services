@@ -4,8 +4,11 @@ minikube start --vm-driver=virtualbox
 eval $(minikube docker-env)
 docker build -t nginx_image ./srcs/
 kubectl apply -f srcs/nginx/nginx.yaml
+minikube addons enable metallb
+kubectl apply -f srcs/metallb_config.yaml
 
 kubectl delete pods nginx
 docker image rm nginx_image
 kubectl get pods
 
+minikube dashboard
