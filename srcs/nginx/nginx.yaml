@@ -8,6 +8,10 @@ spec:
   type: LoadBalancer  #указываем тип
   ports:
     - protocol: TCP
+      name: ssh
+      port: 22
+      targetPort: 22
+    - protocol: TCP
       name: http
       port: 80        #какой порт хотим открыть
       targetPort: 80  #к какому порту хотим присоединиться
@@ -37,5 +41,6 @@ spec:
         image: nginx_image
         imagePullPolicy: Never
         ports:
+        - containerPort: 22
         - containerPort: 80
         - containerPort: 443
