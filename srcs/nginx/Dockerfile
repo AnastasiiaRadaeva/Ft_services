@@ -2,8 +2,6 @@ FROM alpine:latest
 
 RUN apk update && apk upgrade
 
-WORKDIR /srcs
-
 RUN apk add nginx && \
     apk add openssl && \
     apk add openssh && \
@@ -17,8 +15,8 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 
 COPY srcs/start.sh start.sh
 COPY srcs/your_domain /etc/nginx/conf.d/default.conf
-COPY ./srcs/supervisord.conf /etc/supervisord.conf
-COPY ./srcs/index.html /var/www
+COPY srcs/supervisord.conf /etc/supervisord.conf
+COPY srcs/index.html /var/www
 
 RUN mkdir -p /run/nginx
 RUN mkdir /run/sshd
