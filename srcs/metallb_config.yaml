@@ -18,15 +18,16 @@ data:
       protocol: layer2
       addresses:
       - 192.168.99.202-192.168.99.202
+    - name: php
+      protocol: layer2
+      addresses:
+      - 192.168.99.203-192.168.99.203
+    - name: wordpress
+      protocol: layer2
+      addresses:
+      - 192.168.99.204-192.168.99.204
     # - name: grafana
     #   protocol: layer2
     #   addresses:
-    #   - 192.168.99.202-192.168.99.202
-    # - name: php
-    #   protocol: layer2
-    #   addresses:
-    #   - 192.168.99.204-192.168.99.204
-    # - name: wordpress
-    #   protocol: layer2
-    #   addresses:
     #   - 192.168.99.205-192.168.99.205
+    
