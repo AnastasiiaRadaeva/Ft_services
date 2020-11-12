@@ -13,5 +13,14 @@ kubectl delete service mysql-svc
 kubectl delete deployment wordpress-deployment
 kubectl delete service wordpress-svc
 
-# minikube stop
-# minikube delete
+kubectl delete deployment grafana-deployment
+kubectl delete service grafana-svc
+
+kubectl delete deployment influxdb-deployment
+kubectl delete service influxdb-svc
+
+kubectl delete deployment telegraf-deployment
+kubectl delete service telegraf-svc
+
+minikube stop
+minikube delete

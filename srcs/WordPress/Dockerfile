@@ -4,16 +4,12 @@ RUN apk update && apk upgrade
 
 RUN apk add openrc 
 
-RUN apk add openrc && \
-    apk add php7 && \
-	apk add php7-fpm && \
-	apk add php7-zlib && \
-	apk add php7-curl && \
-    apk add php7-mbstring && \
-    apk add php7-session && \
-    apk add php7-json && \
-    apk add php7-mysqli && \
-	apk add openssh openssl
+RUN	apk add nginx supervisor \
+	php7 php7-fpm php7-mysqli \ 
+	php7-zlib php7-curl php7-mbstring \
+	php7-json php7-session
+
+#RUN mkdir www
 
 RUN wget https://wordpress.org/latest.tar.gz && \
 	tar -xzvf latest.tar.gz && \
@@ -22,7 +18,11 @@ RUN wget https://wordpress.org/latest.tar.gz && \
 
 COPY srcs/wp-config.php /www/
 COPY srcs/start.sh start.sh
+COPY srcs/nginx.conf /etc/nginx/conf.d/default.conf
+COPY srcs/supervisord.conf /etc/supervisord.conf
 
+RUN mkdir -p /run/nginx
+RUN chmod -R 777 /run/nginx
 RUN	chmod 777 start.sh
 
 EXPOSE 5050

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: grafana
+  name: grafana-deployment
   labels:
       app: grafana
 spec:
@@ -14,8 +14,8 @@ spec:
         app: grafana
     spec:
       containers:
-      - name: grafana-pod
-        image: grafana
+      - name: grafana
+        image: grafana_image
         imagePullPolicy: Never
         ports:
         - containerPort: 3000
@@ -25,13 +25,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: grafana
+  name: grafana-svc
   labels:
       app: grafana
   annotations:
-    metallb.universe.tf/address-pool: grafana
+    metallb.universe.tf/allow-shared-ip: minikube
 spec:
+  externalTrafficPolicy: Cluster
   type: LoadBalancer
+  loadBalancerIP: 192.168.99.201
   selector:
     app: grafana
   ports:

@@ -1,1 +1,5 @@
-php7 -S 0.0.0.0:5000 -t /usr/share/webapps/phpmyadmin
+#!bin/sh
+
+rc default
+
+/usr/bin/supervisord -c /etc/supervisord.conf

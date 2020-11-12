@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql-deployment
+  labels:
+    app: mysql
 spec:
   selector:
     matchLabels:
@@ -32,8 +34,10 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql-svc
+  labels:
+    app: mysql
   annotations:
-    metallb.universe.tf/address-pool: mysql
+    metallb.universe.tf/allow-shared-ip: minikube
 spec:
   selector:
     app: mysql
