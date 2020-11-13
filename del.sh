@@ -20,7 +20,6 @@ kubectl delete deployment influxdb-deployment
 kubectl delete service influxdb-svc
 
 kubectl delete deployment telegraf-deployment
-kubectl delete service telegraf-svc
 
 minikube stop
 minikube delete

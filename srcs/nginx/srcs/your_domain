@@ -11,13 +11,13 @@ server {
         ssl_certificate     /etc/ssl/certs/nginx-selfsigned.crt;
         ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
         index               index.html;
-        root                /var/www;
+        root                /www;
         access_log          /var/log/nginx/access.log;
 
         location / {
                 try_files $uri $uri/ =404;
         }
-
+ 
         location /wordpress {
             return 307 http://192.168.99.201:5050;
         }

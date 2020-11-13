@@ -14,5 +14,5 @@ RUN mkdir -p /var/lib/grafana_dashboards/
 
 COPY srcs/dashboard.json /var/lib/grafana_dashboards/
 
-EXPOSE  3000
+EXPOSE 3000
 CMD sh start.sh

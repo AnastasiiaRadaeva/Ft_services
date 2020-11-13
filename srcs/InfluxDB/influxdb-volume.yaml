@@ -16,7 +16,9 @@ spec:
   claimRef:
     name: influxdb-volume-claim
     namespace: default
+
 ---
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
