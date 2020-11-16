@@ -112,7 +112,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "wordpress",
+      "title": "WordPress",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -234,7 +234,7 @@
             {
               "key": "app",
               "operator": "=",
-              "value": "php"
+              "value": "phpmyadmin"
             }
           ]
         }
@@ -243,7 +243,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "php",
+      "title": "phpMyAdmin",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -374,7 +374,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "mysql",
+      "title": "MySQL",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -505,7 +505,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "telegraf",
+      "title": "Telegraf",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -636,7 +636,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "influx",
+      "title": "Influx",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -767,7 +767,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "grafana",
+      "title": "Grafana",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -898,7 +898,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "nginx",
+      "title": "Nginx",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1029,7 +1029,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "ftps",
+      "title": "FTPS",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1160,7 +1160,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "metallb",
+      "title": "MetalLB",
       "tooltip": {
         "shared": true,
         "sort": 0,

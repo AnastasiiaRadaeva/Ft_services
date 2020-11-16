@@ -19,7 +19,7 @@ server {
         }
  
         location /wordpress {
-            return 307 http://192.168.99.201:5050;
+            return 307 http://192.168.99.205:5050;
         }
         location /phpmyadmin {
             rewrite ^/phpmyadmin(/.*)$ $1 break;
@@ -27,10 +27,10 @@ server {
             proxy_set_header X-Forwarded-For $remote_addr;
             proxy_set_header Host $host;
             proxy_set_header X-Forwarded-Proto https;
-            proxy_pass  http://192.168.99.201:5000;
+            proxy_pass  http://192.168.99.205:5000;
         }
         location /index.php {
-               return 301   http://192.168.99.201/phpmyadmin/;
+               return 301   http://192.168.99.205/phpmyadmin/;
         }
         rewrite ^([^.]*[^/])$ $1/ permanent;
 }

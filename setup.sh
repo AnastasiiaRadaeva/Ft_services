@@ -1,4 +1,4 @@
-minikube start --vm-driver=virtualbox
+minikube start --vm-driver=virtualbox --cpus=4 --memory=6128 --disk-size=10000
 
 eval $(minikube docker-env)
 
@@ -30,3 +30,17 @@ kubectl apply -f srcs/InfluxDB/influxdb-configmap.yaml
 kubectl apply -f srcs/InfluxDB/influxdb.yaml
 kubectl apply -f srcs/Telegraf/telegraf.yaml
 kubectl apply -f srcs/Grafana/grafana.yaml
+
+
+# check
+# kubectl exec deploy/ftps-deployment -- pkill vsftpd
+# kubectl exec deploy/grafana-deployment -- pkill grafana
+# kubectl exec deploy/telegraf-deployment -- pkill telegraf
+# kubectl exec deploy/influxdb-deployment -- pkill influx
+# kubectl exec deploy/wordpress-deployment -- pkill nginx
+# kubectl exec deploy/wordpress-deployment -- pkill php-fpm7
+# kubectl exec deploy/php-deployment -- pkill nginx
+# kubectl exec deploy/php-deployment -- pkill php-fpm7
+# kubectl exec deploy/mysql-deployment -- pkill /usr/bin/mysqld 
+# kubectl exec deploy/nginx-deployment -- pkill nginx
+# kubectl exec deploy/nginx-deployment -- pkill sshd

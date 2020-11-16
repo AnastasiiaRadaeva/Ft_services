@@ -11,7 +11,7 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -out /etc/ssl/certs/vsftpd.crt \
     -subj "/C=RU/ST=Moscow/L=Moscow/O=School21/CN=kbatwoma"
 
-RUN adduser -D -h /var/ftp kbatwoma; echo "kbatwoma:qwerty" | chpasswd
+RUN adduser -D -h /var/ftp kbatwoma; echo "kbatwoma:root" | chpasswd
 
 RUN mkdir -p /var/ftp
 

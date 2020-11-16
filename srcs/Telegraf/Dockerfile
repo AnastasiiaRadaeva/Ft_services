@@ -1,7 +1,6 @@
 FROM alpine:latest
 
 RUN apk update && apk upgrade
-
 RUN apk add openrc 
 
 ADD https://dl.influxdata.com/telegraf/releases/telegraf-1.15.3_linux_amd64.tar.gz /etc/
